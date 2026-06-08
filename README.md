@@ -8,7 +8,7 @@
 
 ## Overview
 
-This project tackles a 100-class image classification task with only **10 training images per class**. Fine-tuning a neural network from scratch overfits severely in this few-shot regime. Instead, we use **OpenAI CLIP** as a frozen feature extractor and train a lightweight Logistic Regression classifier on top — achieving **88.18% test accuracy** on Kaggle.
+This project tackles a 100-class image classification task with only **10 training images per class**. Fine-tuning a neural network from scratch overfits severely in this few-shot regime. Instead, we use **OpenAI CLIP** as a frozen feature extractor and train a lightweight Logistic Regression classifier on top, achieving **88.18% test accuracy** on Kaggle.
 
 ---
 
