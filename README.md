@@ -1,4 +1,4 @@
-# CSE 144 Final Project — 100-Class Image Classification
+# CSE 144 Final Project : 100-Class Image Classification
 
 **UCSC CSE 144 Applied Machine Learning | Spring 2026**
 
