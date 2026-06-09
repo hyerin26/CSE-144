@@ -2,7 +2,7 @@
 
 UCSC CSE 144 Applied Machine Learning | Spring 2026
 
-![Leaderboard](leadbord.png)
+![Leaderboard](leaderboard.png)
 
 ---
 
