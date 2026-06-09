@@ -1,29 +1,29 @@
-# CSE 144 Final Project : 100-Class Image Classification
+# CSE 144 Final Project — 100-Class Image Classification
 
-**UCSC CSE 144 Applied Machine Learning | Spring 2026**
+UCSC CSE 144 Applied Machine Learning | Spring 2026
 
-![Leaderboard](leaderboard.png)
+![Leaderboard](leadbord.png)
 
 ---
 
 ## Overview
 
-This project tackles a 100-class image classification task with only **10 training images per class**. Fine-tuning a neural network from scratch overfits severely in this few-shot regime. Instead, we use **OpenAI CLIP** as a frozen feature extractor and train a lightweight Logistic Regression classifier on top, achieving **88.18% test accuracy** on Kaggle.
+This project tackles a 100-class image classification task with only 10 training images per class. Fine-tuning a neural network from scratch overfits severely in this few-shot regime. Instead, we use OpenAI CLIP as a frozen feature extractor and train a lightweight Logistic Regression classifier on top, achieving 88.18% test accuracy on Kaggle.
 
 ---
 
 ## Method
 
-**Model:** Ensemble of CLIP ViT-B/16 and CLIP ViT-L/14 (both frozen)
+Model: Ensemble of CLIP ViT-B/16 and CLIP ViT-L/14 (both frozen)
 
-**Pipeline:**
+Pipeline:
 1. Load each training image and pass it through both CLIP models
 2. L2-normalize the output embeddings (512-dim from ViT-B/16, 768-dim from ViT-L/14)
 3. Concatenate into a single 1280-dim feature vector per image
 4. Train a Logistic Regression classifier (C=10, lbfgs, max_iter=3000) on all training features
 5. At inference time, repeat feature extraction on test images and predict
 
-**Why CLIP?** CLIP is pretrained on 400 million image-text pairs and produces semantically rich features that transfer extremely well even with very few labeled examples per class.
+Why CLIP? CLIP is pretrained on 400 million image-text pairs and produces semantically rich features that transfer extremely well even with very few labeled examples per class.
 
 ---
 
@@ -35,7 +35,7 @@ This project tackles a 100-class image classification task with only **10 traini
 | CLIP ViT-B/32 | 69.1% |
 | CLIP ViT-B/16 | 80.0% |
 | CLIP ViT-L/14 | 87.3% |
-| **Ensemble ViT-B/16 + ViT-L/14** | **88.2%** |
+| Ensemble ViT-B/16 + ViT-L/14 | 88.2% |
 
 ---
 
